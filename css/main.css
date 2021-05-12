@@ -1,0 +1,283 @@
+body {
+	overflow: hidden;
+}
+.header {
+    background-image:url(../images/bg.png);
+    background-repeat:repeat;
+	height: 86px;
+}
+.header ul {
+    display: block;
+	position: absolute;
+	margin: 0 auto;
+    -webkit-padding-start: 0.5px;
+    width: 871;
+    right: 0;
+    left: 0;
+}
+.header ul a {
+	color: #fff;
+	display: block;
+	position: relative;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	text-transform: uppercase;
+    padding: 0px 8px;
+	z-index: 100;
+}
+.header li {
+	float: left;
+    list-style-type: none;
+    text-shadow: 1px 1px 0px #000;
+}
+.header li:nth-of-type(3) {
+    cursor: default;
+    font-size: 136;
+    font-family: 'Arvo', serif;
+    color: #fff;
+    text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 2px #000000;
+}
+.header li a {
+    line-height: 86px;
+	color: white;
+	text-decoration: none;
+}
+.header li a:after{
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 0%;
+	left: 0;
+	z-index: -100;
+	background: #63cae3;
+    transition: height cubic-bezier(0.5, 0.5, 0.5, 0.5) 0.20s;
+}
+.header ul a:hover:after{                                        
+	height: 100%;
+    transition: height cubic-bezier(0.43, 0.68, 0.48, 0.76) 0.45s;
+}
+#dontfon a:hover:after {    /*убираем фон на "логотипе"*/
+    height: 0;
+}
+.header li:hover:not(:nth-child(3)){    /*Тень при наведении на текст в шапке*/
+    text-shadow: black 0.1em 0.1em 0.2em;
+    transition: text-shadow, 0.17s, ease;
+}
+.toasty:after {    /*Ничоси при наведении на логотип*/
+    display: block;
+    content: attr(background);
+    width: 222px;
+    height: 218px;
+    background: url('../images/toasty.png') no-repeat center center;
+    position: fixed;
+    bottom: 0; left: 0;
+    margin: -222px;
+    
+    transition: all cubic-bezier(0.5, 0.5, 0.5, 0.5) 0.10s;
+}
+.toasty:hover:after {
+    margin: 0px;
+    transition: all cubic-bezier(0.5, 0.5, 0.5, 0.5) 0.25s;
+}
+.content {
+    position: absolute;
+    display: block;
+    height: 700px;
+    width: 800px;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 0px auto;
+    margin-top: 10px;
+    right: 0;
+    left: 0;
+}
+.page{
+	width: 800px;
+	margin: 40px auto;
+    background-image:url(../images/bg.png);
+    background-repeat:repeat;
+	padding: 10px 20px 30px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-shadow:#000000 0px 0px 15px;
+    color: white;
+    border-radius: 5px;
+}
+.page h2.title{
+	font-weight: 100;
+	font-size: 26px;
+    padding-top: 10px;
+    text-align: center;
+	font-weight: 600;
+}
+
+.page li{
+    margin-bottom: 10px;
+}
+.page.team .member{
+	font-size: 80%;
+	padding: 20 10px 0px;
+    margin-top: 10;
+}
+.page.team .member > a{
+	float: left;
+}
+.page.team .member h4{
+	line-height: 35px;
+}
+.page.team .member .info {
+	margin-left: 120px;
+}
+.copy {
+    position: fixed;
+    display: block;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
+    bottom: 10;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: white;
+    font-size: 16px;
+    opacity: 0.5;
+    transition: all 0.2s ease-out;
+    cursor: default;
+    text-decoration: none;
+}
+.copy:hover {
+    text-shadow: 0px 1px 0px #555;
+    opacity: 1;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+.vk {
+    background-image:url(../images/vk-white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    display: block;
+    height: 48;
+    width: 61;
+    right: 19;
+    top: 19;
+    transition: all cubic-bezier(0.5, 0.5, 0.5, 0.5) 0.25s;
+}
+.vk:hover {
+    transition: all cubic-bezier(0.5, 0.5, 0.5, 0.5) 0.3s;
+    background-image:url(../images/vk-hover.png);
+    transform: rotate(-360deg);
+}
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(255, 255, 255, 0.9);
+	z-index:999;
+}
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+ 
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #e74c3c;
+    -webkit-animation: spin 3s linear infinite;
+      animation: spin 3s linear infinite;
+}
+ 
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #f9c922;
+    -webkit-animation: spin 1.5s linear infinite;
+      animation: spin 1.5s linear infinite;
+}
+ 
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.tilt {
+    -ms-transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+    transform: rotate(-25deg);
+    position: absolute;
+    display: block;
+    height: 30;
+    width: 700;
+    top: 100;
+}
+#text-splashes {
+    color: #FFFF00;
+    font-size: 1.5em;
+    font-family:'minecraftfont';
+    text-shadow:2px 2px #3F3F00;
+    position: absolute;
+    transform: rotate(-25deg);
+}
+.splashes {
+    animation: pop 0.58s infinite;
+    -webkit-animation: pop 0.58s infinite;
+}
+@keyframes pop {
+    from {transform:scale(0.95)}
+    50% {transform:scale(1)}
+    to {transform:scale(0.95)}
+}
+@-webkit-keyframes pop {
+    from {-webkit-transform:scale(0.95)}
+    50% {-webkit-transform:scale(1)}
+    to {-webkit-transform:scale(0.95)}
+}
+@font-face {
+	font-family: 'minecraftfont';
+	src: local('../font/minecraftfont'), url('../font/minecraftfont.ttf') format('truetype');
+}
